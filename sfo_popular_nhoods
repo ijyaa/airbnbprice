@@ -1,0 +1,11 @@
+SELECT 
+	sfo_calendar.available,
+	sfo_listings.neighbourhood
+FROM 
+	sfo_calendar
+JOIN 
+	sfo_listings
+ON 
+	sfo_calendar.listing_id = sfo_listings.id
+WHERE sfo_calendar.available = 'f'
+GROUP BY sfo_calendar.available, sfo_listings.neighbourhood; 
